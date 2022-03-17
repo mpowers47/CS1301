@@ -26,4 +26,6 @@ Base = 60
 #the complicated formual down into bite-sized little chunks.
 
 
-#Add your code here!
+Modifier = STAB * Type * Critical * Other * Random
+Damage = (((2*Level+10)/(250)) * (Attack/Defense) * (Base) + 2) * Modifier
+print(Damage)
