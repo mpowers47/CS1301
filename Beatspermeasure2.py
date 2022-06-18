@@ -33,3 +33,30 @@ for i in range(1,measures+1):
     for beats in bpm_list:
         print(beats)
     bpm_list[0] += 1 
+    
+ SAMPLE:
+    beats_per_measure = 4
+measures = 5
+
+#Start from our previous code, the change we need to make
+#is to what is printed and when.
+
+for measure in range(0, measures):   
+    for beat in range(1, beats_per_measure + 1):
+        
+        #Previously, we always printed the current value
+        #of beat. However, we no longer always want to
+        #do that, so we'll comment out what was here:
+        #print(beat)
+        
+        #What we print depends on the value of beat. If
+        #beat is 1, then we want to print the current
+        #value of measure. However, we started the measure
+        #range at 0, so we want to add one to it before
+        #printing it:
+        if beat == 1:
+            print(measure + 1)
+        
+        #If beat wasn't 1, then we print beat as usual:
+        else:
+            print(beat)
