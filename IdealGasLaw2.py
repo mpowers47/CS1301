@@ -1,0 +1,56 @@
+#Last problem, we wrote a function that calculated pressure
+#given number of moles, temperature, and volume. We told you
+#to assume a value of 0.082057 for R. This value means that
+#pressure must be given in atm, or atmospheres, one of the
+#common units of measurement for pressure.
+#
+#atm is the most common unit for pressure, but there are
+#others: mmHg, Torr, Pa, kPa, bar, and mb, for example. what
+#if pressure was sent in using one of these units? Our
+#calculation would be wrong!
+#
+#So, we want to *assume* that pressure is in atm (and thus,
+#that R should be 0.082057), but we want to let the person
+#calling our function change that if need be. So, revise
+#your find_pressure function so that R is a keyword parameter.
+#Its default value should be 0.082057, but the person calling
+#the function can override that. The name of the parameter for
+#the gas constant must be R for this to work.
+#
+#As a reminder, you're writing a function that calculates:
+#
+# P = (nRT) / V
+#
+
+
+def find_pressure(moles,temperature,volume, R= 0.082057):
+    pressure= (moles * temperature * R)/volume
+    return pressure
+
+
+#
+#If your function works correctly, this will originally
+#print: "Result: 37168.944".
+test_n = 10
+test_T = 298
+test_V = 5
+test_R = 62.364 #Torr!
+print("Result:", find_pressure(test_n, test_T, test_V, R = test_R))
+
+###########################
+---OR---
+def find_pressure(n, T, V, R = 0.082057):
+    
+    #If we defined a variable named R in the previous
+    #problem, then the rest is easy! We just remove that
+    #line. If we didn't, we need to insert R into the line
+    #below where 0.082057 previously appeared.
+    
+    return (n * R * T) / V
+
+
+test_n = 10
+test_T = 298
+test_V = 5
+test_R = 62.364 #Torr!
+print("Result:", find_pressure(test_n, test_T, test_V, R = test_R))
